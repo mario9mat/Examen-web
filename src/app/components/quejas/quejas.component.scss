@@ -1,0 +1,32 @@
+ul{
+    list-style-type: none;
+    margin: 0px;
+    padding: 1em;
+    text-align: left;
+}
+label{
+    display: inline-block;
+    text-align: left;
+    width: 120px ;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+textarea{
+    width: 400px;
+    height: 90px;
+    resize: none;
+}
+#descLab{
+    position: relative;
+    top: -68px;
+}
+form{
+    text-align: center;
+    margin-bottom: 20px;
+    width: 63%;
+
+}
+
+li{
+    padding: 25px;
+}

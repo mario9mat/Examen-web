@@ -1,0 +1,46 @@
+<form id="formulario" [formGroup]="formulario" (ngSubmit)="Validar()" novalidate>
+    <ul>
+        <li>
+            <label for="nombre">Nombre Completo</label>
+            <input type="text" id="nombre" formControlName="nombre" maxlength="25">
+            
+        </li>
+        <div *ngIf="formulario.get('nombre')?.errors && formulario.get('nombre')?.dirty">
+            <p *ngIf="formulario.get('nombre')?.hasError('required')">Rellene Campo Obligatorio</p>
+            <p *ngIf="formulario.get('nombre')?.hasError('minLength')">Nombre Demasiado Corto</p>
+            <p *ngIf="formulario.get('nombre')?.hasError('maxlength')">Nombre Demasiado Largo</p>
+        </div>
+        
+        <li>
+            <label for="pais">País</label>
+            <select name="pais" id="pais" formControlName="pais">
+                <option value="Argentina">Argentina</option>
+                <option value="Bolivia">Bolivia</option>
+                <option value="Brasil">Brasil</option>
+                <option value="Chile">Chile</option>
+                <option value="Colombia">Colombia</option>
+                <option value="Ecuador">Ecuador</option>
+                <option value="Paraguay">Paraguay</option>
+                <option value="Peru">Perú</option>
+                <option value="Uruguay">Uruguay</option>
+                <option value="Venezuela">Venezuela</option>
+            </select>
+        </li>
+        <div *ngIf="formulario.get('pais')?.errors && formulario.get('pais')?.dirty">
+            <p *ngIf="formulario.get('pais')?.hasError('required')">Rellene Campo Obligatorio</p>
+        </div>
+        
+        <li>
+            <label for="obs" id="descLab">Observación</label>
+            <textarea id="obs" formControlName="obs" maxlength="300"></textarea>
+        </li>
+        <div *ngIf="formulario.get('obs')?.errors && formulario.get('obs')?.dirty">
+            <p *ngIf="formulario.get('nombre')?.hasError('required')">Rellene Campo Obligatorio</p>
+            <p *ngIf="formulario.get('nombre')?.hasError('minLength')">Observación Demasiado Corta</p>
+            <p *ngIf="formulario.get('nombre')?.hasError('maxlength')">Observación Demasiado Larga</p>
+        </div>
+        
+    </ul>
+    
+    <a [routerLink]="['/mnsj']" routerLinkActive="router-link-active" ><input  type="submit" value="Enviar" [disabled]="formulario.invalid"></a>
+</form>

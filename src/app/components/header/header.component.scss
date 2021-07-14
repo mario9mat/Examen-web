@@ -1,0 +1,37 @@
+button{
+    //border: 0px;
+    background-color: white;
+    font-size: 20px;
+    padding: 15px;
+    border-style: solid;
+    margin: 10px;
+    
+    
+}
+button:hover{
+
+    background-color: gray;
+
+
+}
+.op{
+    margin-top: 50px;
+    margin-left: 90px;
+}
+svg{
+    size: 200%;
+    position: relative;
+    right:5px;
+    bottom: 3px;
+
+    
+}
+
+p{
+    font-size: 40px;
+    margin-top: 50px;
+    margin-left: 50px;
+
+}
+
+button:focus{background-color:grey;}
